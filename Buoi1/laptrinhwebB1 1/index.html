@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Mini Task Manager</h1>
+      <p>Quản lý công việc của bạn thật gọn gàng </p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel" aria-labelledby="form-title">
+      <h2 id="form-title">Thêm công việc mới</h2>
+      <form id="task-form" novalidate>
+        <div class="form-grid">
+          <div class="field field-title">
+            <label for="task-title">Tên công việc <span class="required">*</span></label>
+            <input id="task-title" name="title" type="text" placeholder="Ví dụ: Ôn tập JavaScript" maxlength="120" required>
+            <p id="form-error" class="form-error" role="alert" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="task-due-date">Hạn hoàn thành</label>
+            <input id="task-due-date" name="dueDate" type="date">
+          </div>
+          <div class="field">
+            <label for="task-priority">Mức ưu tiên</label>
+            <select id="task-priority" name="priority">
+              <option value="Cao">Cao</option>
+              <option value="Trung bình" selected>Trung bình</option>
+              <option value="Thấp">Thấp</option>
+            </select>
+          </div>
+        </div>
+        <button class="button button-primary" type="submit">＋ Thêm công việc</button>
+      </form>
+    </section>
+
+    <section class="panel" aria-labelledby="tasks-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="tasks-title">Danh sách công việc</h2>
+          <p id="task-count" class="muted">Đang tải công việc…</p>
+        </div>
+      </div>
+      <div class="tools">
+        <div class="field search-field">
+          <label for="search-input">Tìm kiếm</label>
+          <input id="search-input" type="search" placeholder="Nhập tên công việc…">
+        </div>
+        <div class="field filter-field">
+          <label for="status-filter">Trạng thái</label>
+          <select id="status-filter">
+            <option value="all">Tất cả</option>
+            <option value="pending">Chưa hoàn thành</option>
+            <option value="done">Đã hoàn thành</option>
+          </select>
+        </div>
+      </div>
+      <div id="task-list" class="task-list" aria-live="polite"></div>
+      <p id="empty-message" class="empty-message" hidden>Không tìm thấy công việc phù hợp.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>Sinh viên: <strong>Nguyễn Lê Anh Thư</strong> <span class="footer-separator">|</span> MSSV:<strong> 224001752</strong> | </span> Lớp: <strong> TUD D2024 </strong></p>
+    </div>
+  </footer>
+</body>
+</html>
