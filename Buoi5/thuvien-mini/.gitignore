@@ -1,0 +1,24 @@
+# Cấu hình riêng và bí mật
+.env
+.env.*
+!.env.example
+/config/database.php
+
+# Thư viện cài bằng Composer
+/vendor/
+
+# Tệp do IDE và hệ điều hành tạo
+/.vscode/
+/.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Log, cache, tệp tạm và dữ liệu upload local
+*.log
+*.tmp
+*.bak
+/cache/
+/tmp/
+/storage/uploads/*
+!/storage/uploads/.gitkeep
